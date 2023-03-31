@@ -63,6 +63,14 @@
   border-radius: 0px 0px 0px 9999px;
 }
 
+.FeatureCard-swiper {
+  --swiper-navigation-color: var(--white);
+  --swiper-navigation-top-offset: 0%;
+  --swiper-navigation-sides-offset: 0;
+
+  line-height: 0;
+}
+
 .FeatureCard-cover {
   width: var(--thumb-w);
   height: var(--thumb-h);
