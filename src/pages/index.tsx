@@ -1,6 +1,7 @@
 import Head from "next/head";
 import useAppStore from "@/store/app";
 import usePromise from "@/hooks/usePromise";
+import FeatureCard from "@/components/FeatureCard";
 
 export default function Home() {
   const { fetchMock } = useAppStore();
@@ -15,21 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className="App">
-          <img
-            className="mainPic"
-            width="150"
-            height="150"
-            src="https://via.placeholder.com/150"
-            alt="Placeholder"
-          />
-          <div className="mainContent">
-            <h1>title</h1>
-            <p className="address">address</p>
-            <button>See description</button>
-            <p className="description">description</p>
-          </div>
-        </div>
+        <FeatureCard {...mockData!} />
       </main>
     </>
   );
