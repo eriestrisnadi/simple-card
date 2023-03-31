@@ -67,18 +67,20 @@ export function FeatureCard(props: FeatureCardProps) {
               </p>
             </div>
           </div>
-          <div className={styles["FeatureCard-action"]}>
-            {!isDescriptionVisible ? (
+
+          {!isDescriptionVisible ? (
+            <div className={styles["FeatureCard-action"]}>
               <button
                 onClick={toggleDescriptionVisibility}
                 className={styles["FeatureCard-action__more"]}
               >
                 See description
               </button>
-            ) : (
-              ""
-            )}
-          </div>
+            </div>
+          ) : (
+            ""
+          )}
+
           {isDescriptionVisible ? (
             <p className={styles["FeatureCard-description"]}>
               {maskPossiblePhone(props.description)}

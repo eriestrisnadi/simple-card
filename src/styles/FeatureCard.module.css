@@ -14,6 +14,8 @@
   padding: 5px;
   position: relative;
   text-align: left;
+  font-size: 14px;
+  line-height: 19px;
 }
 
 .FeatureCard-container {
@@ -68,13 +70,31 @@
 }
 
 .FeatureCard-summary {
-  display: flex;
-  justify-content: space-between;
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
   color: var(--neutral-300);
+}
+
+.FeatureCard-summary > * + * {
+  margin-top: calc(var(--gap) + 4px);
+}
+
+.FeatureCard-summary > :nth-child(odd),
+.FeatureCard-summary > :nth-child(even) {
+  text-align: left;
+}
+
+.FeatureCard-summary > :nth-child(even) {
+  display: flex;
+  align-items: center;
+}
+
+.FeatureCard-summary > :nth-child(even) > * + * {
+  margin-left: calc(var(--gap) + 4px);
+}
+
+.FeatureCard-summary__container > * + * {
+  margin-top: calc(var(--gap) + 4px);
 }
 
 .FeatureCard-summary__heading {
@@ -99,33 +119,30 @@
 .FeatureCard-summary__heading-title {
   font-style: normal;
   font-weight: 600;
-  font-size: 23px;
-  line-height: 31px;
+  font-size: 16px;
+  line-height: 22px;
   color: var(--neutral-300);
 }
 
 .FeatureCard-summary__heading-meta {
-  font-size: 14px;
-  line-height: 19px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
   color: var(--neutral-100);
 }
 
 .FeatureCard-summary__price-range {
   font-weight: 600;
-  font-size: 19px;
-  line-height: 26px;
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .FeatureCard-content {
-  padding: calc(var(--gap) * 3);
+  padding: calc(var(--gap) * 2);
 }
 
 .FeatureCard-content > * + * {
   margin-top: calc(var(--gap) * 2);
-}
-
-.FeatureCard-summary__container > * + * {
-  margin-top: 12px;
 }
 
 .FeatureCard-action {
@@ -141,8 +158,6 @@
   color: var(--blue-500);
   font-style: normal;
   font-weight: 600;
-  font-size: 16px;
-  line-height: 22px;
   cursor: pointer;
 }
 
@@ -155,5 +170,49 @@
     --card-w: 544px;
     --thumb-w: 544px;
     --thumb-h: 272px;
+  }
+
+  .FeatureCard-content {
+    padding: calc(var(--gap) * 3);
+  }
+
+  .FeatureCard-summary {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    line-height: 22px;
+  }
+
+  .FeatureCard-summary > * + * {
+    margin-top: 0;
+  }
+
+  .FeatureCard-summary > :nth-child(odd) {
+    text-align: left;
+  }
+
+  .FeatureCard-summary > :nth-child(even) {
+    display: block;
+    text-align: right;
+  }
+
+  .FeatureCard-summary__heading-title {
+    font-size: 23px;
+    line-height: 31px;
+  }
+
+  .FeatureCard-summary__heading-meta {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .FeatureCard-summary__price-range {
+    font-size: 19px;
+    line-height: 26px;
+  }
+
+  .FeatureCard-action__more {
+    font-size: 16px;
+    line-height: 22px;
   }
 }
