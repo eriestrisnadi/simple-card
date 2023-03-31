@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState, MouseEvent } from "react";
 import router from "next/router";
 import styles from "@/styles/FeatureCard.module.css";
 import BuildingIcon from "./icons/Building";
+import maskPossiblePhone from "@/utils/maskPossiblePhone";
 
 interface FeatureCardProps extends MockData {}
 
@@ -78,7 +79,7 @@ export function FeatureCard(props: FeatureCardProps) {
           </div>
           {isDescriptionVisible ? (
             <p className={styles["FeatureCard-description"]}>
-              {props.description}
+              {maskPossiblePhone(props.description)}
             </p>
           ) : (
             ""
