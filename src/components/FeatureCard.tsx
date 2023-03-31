@@ -3,6 +3,7 @@ import router from "next/router";
 import styles from "@/styles/FeatureCard.module.css";
 import BuildingIcon from "./icons/Building";
 import maskPossiblePhone from "@/utils/maskPossiblePhone";
+import formatCurrency from "@/utils/formatCurrency";
 
 interface FeatureCardProps extends MockData {}
 
@@ -58,7 +59,8 @@ export function FeatureCard(props: FeatureCardProps) {
             </div>
             <div>
               <p className={styles["FeatureCard-summary__price-range"]}>
-                ${props.psf_min} - ${props.psf_max}
+                ${formatCurrency(props.psf_min)} - $
+                {formatCurrency(props.psf_max)} psf
               </p>
               <p className={styles["FeatureCard-summary__heading-meta"]}>
                 {props.subprice_label}
